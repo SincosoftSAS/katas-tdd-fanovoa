@@ -4,7 +4,10 @@ namespace FizzBuzz
     {
         public static List<string> Generate(int count)
         {
-            return [count.ToString()];
+            if (count == 1)
+                return ["1"];
+
+            return [""];
         }
     }
 }

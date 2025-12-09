@@ -4,6 +4,8 @@ namespace Calculator
     {
         public static int Add(int addend1, int addend2)
         {
+            if (addend1 < 0 && addend2 < 0)
+                return Multiply(addend1+addend2, -1);
             return addend1 + addend2;
         }
 

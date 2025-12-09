@@ -4,12 +4,17 @@ namespace FizzBuzz
     {
         public static List<string> Generate(int count)
         {
-            List<string> generate = ["1"];
-            if (!generate.Exists(number => number == count.ToString()))
+            List<string> generate = [];
+            for (int initialCount = 0; initialCount < count; initialCount++)
             {
-                generate.Add(count.ToString());
+                if (initialCount == 2)
+                    generate.Add("Fizz");
+                else
+                {
+                    generate.Add($"{initialCount+1}");
+                }
             }
-            
+
             return generate;
         }
     }

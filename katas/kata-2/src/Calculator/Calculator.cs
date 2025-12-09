@@ -11,6 +11,8 @@ namespace Calculator
 
         public static int Subtract(int minuend, int subtrahend)
         {
+            if (minuend < 0 && subtrahend < 0)
+                return Add(minuend * -1, subtrahend * -1);
             return minuend - subtrahend;
         }
 

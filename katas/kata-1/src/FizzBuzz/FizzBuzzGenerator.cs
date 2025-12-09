@@ -6,25 +6,20 @@ namespace FizzBuzz
         {
             List<string> _generate = [];
 
-            for (int initialCount = 1; initialCount <= count; initialCount++)
+            for (int number = 1; number <= count; number++)
             {
-                if (IsDivisibleForFifteen(initialCount))
+                if (IsDivisibleFor(number,15))
                     _generate.Add("FizzBuzz");
-                else if (IsDivisibleForThree(initialCount))
+                else if (IsDivisibleFor(number,3))
                     _generate.Add("Fizz");
-                else if (IsDivisibleForFive(initialCount))
+                else if (IsDivisibleFor(number,5))
                     _generate.Add("Buzz");
                 else
-                    _generate.Add($"{initialCount}");
+                    _generate.Add($"{number}");
             }
 
             return _generate;
         }
-
-        private static bool IsDivisibleForFifteen(int initialCount) => initialCount % 15 == 0;
-
-        private static bool IsDivisibleForFive(int initialCount) => initialCount % 5 == 0;
-
-        private static bool IsDivisibleForThree(int initialCount) => initialCount % 3 == 0;
+        private static bool IsDivisibleFor( int multiple, int divisor) => multiple % divisor == 0;
     }
 }

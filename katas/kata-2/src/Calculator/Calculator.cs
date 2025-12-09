@@ -7,9 +7,9 @@ namespace Calculator
             return addend1 + addend2;
         }
 
-        public int Subtract(int a, int b)
+        public int Subtract(int minuend, int subtrahend)
         {
-            return a - b;
+            return minuend - subtrahend;
         }
 
         public int Multiply(int a, int b)

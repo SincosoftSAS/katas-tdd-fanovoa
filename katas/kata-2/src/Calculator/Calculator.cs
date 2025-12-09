@@ -2,9 +2,9 @@ namespace Calculator
 {
     public class Calculator
     {
-        public int Add(int a, int b)
+        public int Add(int addend1, int addend2)
         {
-            return a + b;
+            return addend1 + addend2;
         }
 
         public int Subtract(int a, int b)

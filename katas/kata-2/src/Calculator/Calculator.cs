@@ -4,10 +4,10 @@ namespace Calculator
     {
         public static int Add(int addend1, int addend2)
         {
-            if (addend1 < 0 && addend2 < 0)
-                return Multiply(addend1+addend2, -1);
-            return addend1 + addend2;
+            var add = addend1 + addend2;
+            return TheAddendsAreNegatives(addend1, addend2) ? Multiply(add, -1) : add;
         }
+
 
         public static int Subtract(int minuend, int subtrahend)
         {
@@ -21,14 +21,17 @@ namespace Calculator
 
         public static int Divide(int dividend, int divisor)
         {
-            ExecuteExeptionDivisorZero(divisor);
+            ExecuteExceptionDivisorZero(divisor);
             return dividend / divisor;
         }
 
-        private static void ExecuteExeptionDivisorZero(int divisor)
+        private static void ExecuteExceptionDivisorZero(int divisor)
         {
             if( divisor == 0)
                 throw new DivideByZeroException("Cannot divide by zero");
         }
+        
+        private static bool TheAddendsAreNegatives(int addend1, int addend2) => addend1 < 0 && addend2 < 0;
+        
     }
 }

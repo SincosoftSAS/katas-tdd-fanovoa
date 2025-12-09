@@ -17,7 +17,7 @@ namespace Calculator
             }
             catch (OverflowException)
             {
-                throw  HandleOverflowException();
+                throw new OverflowException(ArithmeticOperationResultedInAnOverflow);
             }
         }
 
@@ -51,7 +51,7 @@ namespace Calculator
             }
             catch (OverflowException)
             {
-                throw HandleOverflowException();
+                throw new OverflowException(ArithmeticOperationResultedInAnOverflow);
             }
         }
 
@@ -69,7 +69,7 @@ namespace Calculator
             }
             catch (OverflowException)
             {
-                throw HandleOverflowException();
+                throw new OverflowException(ArithmeticOperationResultedInAnOverflow);
 
             }
         }
@@ -82,7 +82,7 @@ namespace Calculator
 
         private static bool TheNumbersAreNegatives(int addend1, int addend2) => addend1 < 0 && addend2 < 0;
         
-        private static Exception HandleOverflowException() => new OverflowException(ArithmeticOperationResultedInAnOverflow);
+        
         
     }
 }

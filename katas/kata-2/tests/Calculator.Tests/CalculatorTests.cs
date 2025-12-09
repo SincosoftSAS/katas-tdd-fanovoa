@@ -92,6 +92,22 @@ namespace Calculator.Tests
             // Assert
             result.Should().Throw<DivideByZeroException>("Cannot divide by zero");
         }
+        
+        
+        [Fact]
+        public void  Add_TwoNegativeNumbers_ReturnsSumPositive()
+        {
+            // Arrange
+            int a = -10;
+            int b = -2;
+        
+            // Act
+            var result = Calculator.Add(a, b);
+        
+            // Assert
+            result.Should().Be(12);
+
+        }
 
         
     }

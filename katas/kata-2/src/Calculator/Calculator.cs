@@ -4,23 +4,32 @@ namespace Calculator
     {
         public static int Add(int addend1, int addend2)
         {
-            var add = addend1 + addend2;
-            return TheNumbersAreNegatives(addend1, addend2) ? Multiply(add, -1) : add;
+            try
+            {
+                checked
+                {
+                    var add = addend1 + addend2;
+                    return TheNumbersAreNegatives(addend1, addend2) ? Multiply(add, -1) : add;
+                }
+            }
+            catch (OverflowException)
+            {
+                throw new OverflowException("Arithmetic operation resulted in an overflow.");
+            }
         }
 
 
         public static int Subtract(int minuend, int subtrahend)
         {
-          
             if (TheNumbersAreNegatives(minuend, subtrahend))
-                return Add(minuend,subtrahend );
-            
+                return Add(minuend, subtrahend);
+
             return minuend - subtrahend;
         }
 
         public static int Multiply(int factor1, int factor2)
         {
-            return factor1 *factor2;
+            return factor1 * factor2;
         }
 
         public static int Divide(int dividend, int divisor)
@@ -31,11 +40,10 @@ namespace Calculator
 
         private static void ExecuteExceptionDivisorZero(int divisor)
         {
-            if( divisor == 0)
+            if (divisor == 0)
                 throw new DivideByZeroException("Cannot divide by zero");
         }
-        
+
         private static bool TheNumbersAreNegatives(int addend1, int addend2) => addend1 < 0 && addend2 < 0;
-        
     }
 }

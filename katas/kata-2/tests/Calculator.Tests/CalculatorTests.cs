@@ -20,6 +20,21 @@ namespace Calculator.Tests
             // Assert
             result.Should().Be(8);
         }
+        
+        [Fact]
+        public void Add_TwoPositiveNumbers6and3_ReturnsSum()
+        {
+            // Arrange
+            int a = 6;
+            int b = 3;
+
+            // Act
+            int result = _calculator.Add(a, b);
+
+            // Assert
+            result.Should().Be(9);
+        }
+        
         //
         // [Fact]
         // public void Subtract_TwoNumbers_ReturnsDifference()

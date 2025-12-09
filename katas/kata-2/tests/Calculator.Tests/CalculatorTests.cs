@@ -65,5 +65,20 @@ namespace Calculator.Tests
         }
 
         
+        [Fact]
+        public void Divide_TwoNumbers_ReturnsDivide()
+        {
+            // Arrange
+            int a = 10;
+            int b = 5;
+        
+            // Act
+            int result = _calculator.Multiply(a, b);
+        
+            // Assert
+            result.Should().Be(2);
+        }
+
+        
     }
 }

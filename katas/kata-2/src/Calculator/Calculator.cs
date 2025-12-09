@@ -58,7 +58,20 @@ namespace Calculator
         public static int Divide(int dividend, int divisor)
         {
             ExecuteExceptionDivisorZero(divisor);
-            return dividend / divisor;
+
+            try
+            {
+                checked
+                {
+                    return dividend / divisor;
+                    
+                }
+            }
+            catch (OverflowException)
+            {
+                throw HandleOverflowException();
+
+            }
         }
 
         private static void ExecuteExceptionDivisorZero(int divisor)

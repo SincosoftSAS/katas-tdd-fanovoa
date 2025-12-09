@@ -166,8 +166,8 @@ namespace Calculator.Tests
         [Fact]
         public void Divide_WhenOverflowOccurs_ShouldThrowOverflowException()
         {
-            int a = int.MaxValue;
-            int b = 1;
+            int a = int.MinValue;
+            int b = -1;
 
             // Act
             Action result = () => Calculator.Divide(a, b);

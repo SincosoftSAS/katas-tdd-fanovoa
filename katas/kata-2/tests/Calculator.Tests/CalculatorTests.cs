@@ -15,7 +15,7 @@ namespace Calculator.Tests
             int b = 3;
 
             // Act
-            int result = _calculator.Add(a, b);
+            int result = Calculator.Add(a, b);
 
             // Assert
             result.Should().Be(8);
@@ -29,7 +29,7 @@ namespace Calculator.Tests
             int b = 3;
 
             // Act
-            int result = _calculator.Add(a, b);
+            int result = Calculator.Add(a, b);
 
             // Assert
             result.Should().Be(9);
@@ -44,7 +44,7 @@ namespace Calculator.Tests
             int b = 4;
         
             // Act
-            int result = _calculator.Subtract(a, b);
+            int result = Calculator.Subtract(a, b);
         
             // Assert
             result.Should().Be(6);
@@ -58,7 +58,7 @@ namespace Calculator.Tests
             int b = 4;
         
             // Act
-            int result = _calculator.Multiply(a, b);
+            int result = Calculator.Multiply(a, b);
         
             // Assert
             result.Should().Be(40);
@@ -73,7 +73,7 @@ namespace Calculator.Tests
             int b = 5;
         
             // Act
-            int result = _calculator.Divide(a, b);
+            int result = Calculator.Divide(a, b);
         
             // Assert
             result.Should().Be(2);
@@ -87,7 +87,7 @@ namespace Calculator.Tests
             int b = 0;
         
             // Act
-            Action result = () => _calculator.Divide(a, b);
+            Action result = () => Calculator.Divide(a, b);
         
             // Assert
             result.Should().Throw<DivideByZeroException>("Cannot divide by zero");

@@ -11,12 +11,11 @@ namespace Calculator
 
         public static int Subtract(int minuend, int subtrahend)
         {
-            var subtract = minuend - subtrahend;
-            
+          
             if (TheNumbersAreNegatives(minuend, subtrahend))
-                return Add(minuend * -1, subtrahend * -1);
+                return Add(minuend,subtrahend );
             
-            return subtract;
+            return minuend - subtrahend;
         }
 
         public static int Multiply(int factor1, int factor2)

@@ -12,9 +12,9 @@ namespace Calculator
             return minuend - subtrahend;
         }
 
-        public int Multiply(int a, int b)
+        public int Multiply(int factor1, int factor2)
         {
-            return a *b;
+            return factor1 *factor2;
         }
 
         public int Divide(int a, int b)

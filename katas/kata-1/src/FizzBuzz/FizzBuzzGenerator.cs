@@ -9,10 +9,8 @@ namespace FizzBuzz
             {
                 if ( initialCount % 3 == 0 )
                     generate.Add("Fizz");
-                else if( initialCount ==5 || initialCount == 10)
-                {
+                else if( initialCount % 5 == 0)
                     generate.Add("Buzz");
-                }
                 else 
                     generate.Add($"{initialCount}");
             }

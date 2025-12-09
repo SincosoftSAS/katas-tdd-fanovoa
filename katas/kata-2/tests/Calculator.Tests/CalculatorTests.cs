@@ -20,7 +20,7 @@ namespace Calculator.Tests
             // Assert
             result.Should().Be(8);
         }
-        
+
         [Fact]
         public void Add_TwoPositiveNumbers6and3_ReturnsSum()
         {
@@ -34,108 +34,120 @@ namespace Calculator.Tests
             // Assert
             result.Should().Be(9);
         }
-        
-        
+
+
         [Fact]
         public void Subtract_TwoNumbers_ReturnsDifference()
         {
             // Arrange
             int a = 10;
             int b = 4;
-        
+
             // Act
             var result = Calculator.Subtract(a, b);
-        
+
             // Assert
             result.Should().Be(6);
         }
-        
+
         [Fact]
         public void Multiply_TwoNumbers_ReturnsMultiply()
         {
             // Arrange
             int a = 10;
             int b = 4;
-        
+
             // Act
             var result = Calculator.Multiply(a, b);
-        
+
             // Assert
             result.Should().Be(40);
         }
 
-        
+
         [Fact]
         public void Divide_TwoNumbers_ReturnsDivide()
         {
             // Arrange
             int a = 10;
             int b = 5;
-        
+
             // Act
             var result = Calculator.Divide(a, b);
-        
+
             // Assert
             result.Should().Be(2);
         }
-        
+
         [Fact]
         public void Divide_OneNumberByZero_ExecuteDivisionByZeroException()
         {
             // Arrange
             int a = 10;
             int b = 0;
-        
+
             // Act
             Action result = () => Calculator.Divide(a, b);
-        
+
             // Assert
             result.Should().Throw<DivideByZeroException>("Cannot divide by zero");
         }
-        
-        
+
+
         [Fact]
-        public void  Add_TwoNegativeNumbers_ReturnsSumPositive()
+        public void Add_TwoNegativeNumbers_ReturnsSumPositive()
         {
             // Arrange
             int a = -10;
             int b = -2;
-        
+
             // Act
             var result = Calculator.Add(a, b);
-        
+
             // Assert
             result.Should().Be(12);
-
         }
-        
+
         [Fact]
         public void Subtract_TwoNumbers_ReturnsSum()
         {
             // Arrange
             int a = -10;
             int b = -4;
-        
+
             // Act
             var result = Calculator.Subtract(a, b);
-        
+
             // Assert
             result.Should().Be(14);
         }
-        
+
         [Fact]
         public void Add_WhenOverflowOccurs_ShouldThrowOverflowException()
         {
             // Arrange
             int a = int.MaxValue;
             int b = 1;
-        
+
             // Act
-             Action result = () => Calculator.Add(a, b);
-        
+            Action result = () => Calculator.Add(a, b);
+
             // Assert
             result.Should().Throw<OverflowException>("Arithmetic operation resulted in an overflow.");
         }
-        
+
+
+        [Fact]
+        public void Subtract_WhenOverflowOccurs_ShouldThrowOverflowException()
+        {
+            int a = int.MaxValue;
+            int b = -1;
+
+            // Act
+            Action result = () => Calculator.Subtract(a, b);
+
+            // Assert
+            result.Should().Throw<OverflowException>("Arithmetic operation resulted in an overflow.");
+        }
     }
 }

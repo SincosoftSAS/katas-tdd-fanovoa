@@ -4,10 +4,7 @@ namespace Calculator
     {
         public int Add(int a, int b)
         {
-            if( a == 5 & b == 3) 
-                return 8;
-
-            return a;
+            return a + b;
         }
 
         public int Subtract(int a, int b)

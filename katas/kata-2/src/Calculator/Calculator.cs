@@ -2,6 +2,9 @@ namespace Calculator
 {
     public class Calculator
     {
+        private const string? CannotDivideByZero = "Cannot divide by zero";
+        private const string? ArithmeticOperationResultedInAnOverflow = "Arithmetic operation resulted in an overflow.";
+
         public static int Add(int addend1, int addend2)
         {
             try
@@ -14,10 +17,9 @@ namespace Calculator
             }
             catch (OverflowException)
             {
-                throw new OverflowException("Arithmetic operation resulted in an overflow.");
+                throw  HandleOverflowException();
             }
         }
-
 
         public static int Subtract(int minuend, int subtrahend)
         {
@@ -33,7 +35,7 @@ namespace Calculator
             }
             catch (OverflowException)
             {
-                throw new OverflowException("Arithmetic operation resulted in an overflow.");
+                throw new OverflowException(ArithmeticOperationResultedInAnOverflow);
             }
         }
 
@@ -51,9 +53,12 @@ namespace Calculator
         private static void ExecuteExceptionDivisorZero(int divisor)
         {
             if (divisor == 0)
-                throw new DivideByZeroException("Cannot divide by zero");
+                throw new DivideByZeroException(CannotDivideByZero);
         }
 
         private static bool TheNumbersAreNegatives(int addend1, int addend2) => addend1 < 0 && addend2 < 0;
+        
+        private static Exception HandleOverflowException() => new OverflowException(ArithmeticOperationResultedInAnOverflow);
+        
     }
 }

@@ -122,7 +122,6 @@ namespace Calculator.Tests
             // Assert
             result.Should().Be(14);
         }
-
         
     }
 }

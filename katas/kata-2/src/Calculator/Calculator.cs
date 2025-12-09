@@ -5,15 +5,18 @@ namespace Calculator
         public static int Add(int addend1, int addend2)
         {
             var add = addend1 + addend2;
-            return TheAddendsAreNegatives(addend1, addend2) ? Multiply(add, -1) : add;
+            return TheNumbersAreNegatives(addend1, addend2) ? Multiply(add, -1) : add;
         }
 
 
         public static int Subtract(int minuend, int subtrahend)
         {
-            if (minuend < 0 && subtrahend < 0)
+            var subtract = minuend - subtrahend;
+            
+            if (TheNumbersAreNegatives(minuend, subtrahend))
                 return Add(minuend * -1, subtrahend * -1);
-            return minuend - subtrahend;
+            
+            return subtract;
         }
 
         public static int Multiply(int factor1, int factor2)
@@ -33,7 +36,7 @@ namespace Calculator
                 throw new DivideByZeroException("Cannot divide by zero");
         }
         
-        private static bool TheAddendsAreNegatives(int addend1, int addend2) => addend1 < 0 && addend2 < 0;
+        private static bool TheNumbersAreNegatives(int addend1, int addend2) => addend1 < 0 && addend2 < 0;
         
     }
 }

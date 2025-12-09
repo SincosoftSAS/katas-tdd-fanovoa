@@ -163,5 +163,18 @@ namespace Calculator.Tests
             result.Should().Throw<OverflowException>("Arithmetic operation resulted in an overflow.");
         }
         
+        [Fact]
+        public void Divide_WhenOverflowOccurs_ShouldThrowOverflowException()
+        {
+            int a = int.MaxValue;
+            int b = 1;
+
+            // Act
+            Action result = () => Calculator.Divide(a, b);
+
+            // Assert
+            result.Should().Throw<OverflowException>("Arithmetic operation resulted in an overflow.");
+        }
+        
     }
 }

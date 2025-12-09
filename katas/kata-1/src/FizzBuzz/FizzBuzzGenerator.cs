@@ -7,7 +7,7 @@ namespace FizzBuzz
             List<string> generate = [];
             for (int initialCount = 1; initialCount <= count; initialCount++)
             {
-                if (initialCount == 3 || initialCount == 6)
+                if ( initialCount % 3 == 0 )
                     generate.Add("Fizz");
                 else
                 {

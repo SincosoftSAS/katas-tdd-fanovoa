@@ -27,6 +27,17 @@ namespace FizzBuzz.Tests
             result[1].Should().Be("2");
         }
         
+        [Fact]
+        public void Generate_WithThree_ReturnsListWithFizz()
+        {
+            // Arrange & Act
+            var result = FizzBuzzGenerator.Generate(3);
+            
+            // Assert
+            result.Should().HaveCount(3);
+            result[2].Should().Be("Fizz");
+        }
+        
         
         // [Fact]
         // public void Generate_WithFifteen_ReturnsListWithFizzBuzz()

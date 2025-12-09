@@ -73,7 +73,7 @@ namespace Calculator.Tests
             int b = 5;
         
             // Act
-            int result = _calculator.Multiply(a, b);
+            int result = _calculator.Divide(a, b);
         
             // Assert
             result.Should().Be(2);

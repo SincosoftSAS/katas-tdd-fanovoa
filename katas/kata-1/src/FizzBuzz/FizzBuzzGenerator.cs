@@ -8,7 +8,7 @@ namespace FizzBuzz
 
             for (int initialCount = 1; initialCount <= count; initialCount++)
             {
-                if (IsDivisibleForThree(initialCount) && IsDivisibleForFive(initialCount))
+                if (IsDivisibleForFifteen(initialCount))
                     _generate.Add("FizzBuzz");
                 else if (IsDivisibleForThree(initialCount))
                     _generate.Add("Fizz");
@@ -20,6 +20,8 @@ namespace FizzBuzz
 
             return _generate;
         }
+
+        private static bool IsDivisibleForFifteen(int initialCount) => initialCount % 15 == 0;
 
         private static bool IsDivisibleForFive(int initialCount) => initialCount % 5 == 0;
 

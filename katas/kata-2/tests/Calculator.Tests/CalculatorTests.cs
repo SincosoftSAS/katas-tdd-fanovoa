@@ -78,6 +78,20 @@ namespace Calculator.Tests
             // Assert
             result.Should().Be(2);
         }
+        
+        [Fact]
+        public void Divide_OneNumberByZero_ExecuteDivisionByZeroException()
+        {
+            // Arrange
+            int a = 10;
+            int b = 5;
+        
+            // Act
+            Action result = () => _calculator.Divide(a, b);
+        
+            // Assert
+            result.Should().Throw<DivideByZeroException>("Cannot divide by zero");
+        }
 
         
     }

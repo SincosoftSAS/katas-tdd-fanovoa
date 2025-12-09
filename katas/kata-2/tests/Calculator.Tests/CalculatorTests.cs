@@ -84,7 +84,7 @@ namespace Calculator.Tests
         {
             // Arrange
             int a = 10;
-            int b = 5;
+            int b = 0;
         
             // Act
             Action result = () => _calculator.Divide(a, b);

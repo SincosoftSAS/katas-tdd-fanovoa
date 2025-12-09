@@ -19,6 +19,8 @@ namespace Calculator
 
         public int Divide(int dividend, int divisor)
         {
+            if( divisor == 0)
+                throw new DivideByZeroException("Cannot divide by zero");
             return dividend / divisor;
         }
     }

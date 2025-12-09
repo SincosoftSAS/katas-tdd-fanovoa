@@ -5,7 +5,7 @@ namespace Calculator
         private const string? CannotDivideByZero = "Cannot divide by zero";
         private const string? ArithmeticOperationResultedInAnOverflow = "Arithmetic operation resulted in an overflow.";
 
-        public static int Add(int addend1, int addend2)
+        public int Add(int addend1, int addend2)
         {
             try
             {
@@ -21,7 +21,7 @@ namespace Calculator
             }
         }
 
-        public static int Subtract(int minuend, int subtrahend)
+        public int Subtract(int minuend, int subtrahend)
         {
             try
             {
@@ -39,7 +39,7 @@ namespace Calculator
             }
         }
 
-        public static int Multiply(int factor1, int factor2)
+        public int Multiply(int factor1, int factor2)
         {
             try
             {
@@ -55,7 +55,7 @@ namespace Calculator
             }
         }
 
-        public static int Divide(int dividend, int divisor)
+        public int Divide(int dividend, int divisor)
         {
             ExecuteExceptionDivisorZero(divisor);
 

@@ -15,7 +15,7 @@ namespace Calculator.Tests
             int b = 3;
 
             // Act
-            var result = Calculator.Add(a, b);
+            var result = _calculator.Add(a, b);
 
             // Assert
             result.Should().Be(8);
@@ -29,7 +29,7 @@ namespace Calculator.Tests
             int b = 3;
 
             // Act
-            var result = Calculator.Add(a, b);
+            var result = _calculator.Add(a, b);
 
             // Assert
             result.Should().Be(9);
@@ -44,7 +44,7 @@ namespace Calculator.Tests
             int b = 4;
 
             // Act
-            var result = Calculator.Subtract(a, b);
+            var result = _calculator.Subtract(a, b);
 
             // Assert
             result.Should().Be(6);
@@ -58,7 +58,7 @@ namespace Calculator.Tests
             int b = 4;
 
             // Act
-            var result = Calculator.Multiply(a, b);
+            var result = _calculator.Multiply(a, b);
 
             // Assert
             result.Should().Be(40);
@@ -73,7 +73,7 @@ namespace Calculator.Tests
             int b = 5;
 
             // Act
-            var result = Calculator.Divide(a, b);
+            var result = _calculator.Divide(a, b);
 
             // Assert
             result.Should().Be(2);
@@ -87,7 +87,7 @@ namespace Calculator.Tests
             int b = 0;
 
             // Act
-            Action result = () => Calculator.Divide(a, b);
+            Action result = () => _calculator.Divide(a, b);
 
             // Assert
             result.Should().Throw<DivideByZeroException>("Cannot divide by zero");
@@ -102,7 +102,7 @@ namespace Calculator.Tests
             int b = -2;
 
             // Act
-            var result = Calculator.Add(a, b);
+            var result = _calculator.Add(a, b);
 
             // Assert
             result.Should().Be(12);
@@ -116,7 +116,7 @@ namespace Calculator.Tests
             int b = -4;
 
             // Act
-            var result = Calculator.Subtract(a, b);
+            var result = _calculator.Subtract(a, b);
 
             // Assert
             result.Should().Be(14);
@@ -130,7 +130,7 @@ namespace Calculator.Tests
             int b = 1;
 
             // Act
-            Action result = () => Calculator.Add(a, b);
+            Action result = () => _calculator.Add(a, b);
 
             // Assert
             result.Should().Throw<OverflowException>("Arithmetic operation resulted in an overflow.");
@@ -144,7 +144,7 @@ namespace Calculator.Tests
             int b = -1;
 
             // Act
-            Action result = () => Calculator.Subtract(a, b);
+            Action result = () => _calculator.Subtract(a, b);
 
             // Assert
             result.Should().Throw<OverflowException>("Arithmetic operation resulted in an overflow.");
@@ -157,7 +157,7 @@ namespace Calculator.Tests
             int b = 2;
 
             // Act
-            Action result = () => Calculator.Multiply(a, b);
+            Action result = () => _calculator.Multiply(a, b);
 
             // Assert
             result.Should().Throw<OverflowException>("Arithmetic operation resulted in an overflow.");
@@ -170,7 +170,7 @@ namespace Calculator.Tests
             int b = -1;
 
             // Act
-            Action result = () => Calculator.Divide(a, b);
+            Action result = () => _calculator.Divide(a, b);
 
             // Assert
             result.Should().Throw<OverflowException>("Arithmetic operation resulted in an overflow.");

@@ -41,7 +41,18 @@ namespace Calculator
 
         public static int Multiply(int factor1, int factor2)
         {
-            return factor1 * factor2;
+            try
+            {
+                checked
+                {
+                    return factor1 * factor2;
+                }
+
+            }
+            catch (OverflowException)
+            {
+                throw HandleOverflowException();
+            }
         }
 
         public static int Divide(int dividend, int divisor)

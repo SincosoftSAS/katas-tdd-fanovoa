@@ -5,13 +5,13 @@ namespace FizzBuzz
         public static List<string> Generate(int count)
         {
             List<string> generate = [];
-            for (int initialCount = 0; initialCount < count; initialCount++)
+            for (int initialCount = 1; initialCount <= count; initialCount++)
             {
-                if (initialCount == 2)
+                if (initialCount == 3)
                     generate.Add("Fizz");
                 else
                 {
-                    generate.Add($"{initialCount+1}");
+                    generate.Add($"{initialCount}");
                 }
             }
 

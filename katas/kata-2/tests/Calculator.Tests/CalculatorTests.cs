@@ -108,6 +108,20 @@ namespace Calculator.Tests
             result.Should().Be(12);
 
         }
+        
+        [Fact]
+        public void Subtract_TwoNumbers_ReturnsSum()
+        {
+            // Arrange
+            int a = -10;
+            int b = -4;
+        
+            // Act
+            int result = Calculator.Subtract(a, b);
+        
+            // Assert
+            result.Should().Be(14);
+        }
 
         
     }

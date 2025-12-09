@@ -149,5 +149,19 @@ namespace Calculator.Tests
             // Assert
             result.Should().Throw<OverflowException>("Arithmetic operation resulted in an overflow.");
         }
+        
+        [Fact]
+        public void Multiply_WhenOverflowOccurs_ShouldThrowOverflowException()
+        {
+            int a = int.MaxValue;
+            int b = 2;
+
+            // Act
+            Action result = () => Calculator.Multiply(a, b);
+
+            // Assert
+            result.Should().Throw<OverflowException>("Arithmetic operation resulted in an overflow.");
+        }
+        
     }
 }

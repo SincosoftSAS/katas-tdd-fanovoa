@@ -11,8 +11,8 @@ namespace Calculator
             {
                 checked
                 {
-                    var add = addend1 + addend2;
-                    return TheNumbersAreNegatives(addend1, addend2) ? Multiply(add, -1) : add;
+                   return addend1 + addend2;
+          
                 }
             }
             catch (OverflowException)
@@ -28,7 +28,7 @@ namespace Calculator
                 checked
                 {
                     if (TheNumbersAreNegatives(minuend, subtrahend))
-                        return Add(minuend, subtrahend);
+                        return Add(minuend, subtrahend*-1);
 
                     return minuend - subtrahend;
                 }

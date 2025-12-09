@@ -105,7 +105,7 @@ namespace Calculator.Tests
             var result = _calculator.Add(a, b);
 
             // Assert
-            result.Should().Be(12);
+            result.Should().Be(-12);
         }
 
         [Fact]
@@ -119,7 +119,7 @@ namespace Calculator.Tests
             var result = _calculator.Subtract(a, b);
 
             // Assert
-            result.Should().Be(14);
+            result.Should().Be(-6);
         }
 
         [Fact]

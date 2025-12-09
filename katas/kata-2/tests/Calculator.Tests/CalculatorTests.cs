@@ -15,7 +15,7 @@ namespace Calculator.Tests
             int b = 3;
 
             // Act
-            int result = Calculator.Add(a, b);
+            var result = Calculator.Add(a, b);
 
             // Assert
             result.Should().Be(8);
@@ -29,7 +29,7 @@ namespace Calculator.Tests
             int b = 3;
 
             // Act
-            int result = Calculator.Add(a, b);
+            var result = Calculator.Add(a, b);
 
             // Assert
             result.Should().Be(9);
@@ -44,7 +44,7 @@ namespace Calculator.Tests
             int b = 4;
         
             // Act
-            int result = Calculator.Subtract(a, b);
+            var result = Calculator.Subtract(a, b);
         
             // Assert
             result.Should().Be(6);
@@ -58,7 +58,7 @@ namespace Calculator.Tests
             int b = 4;
         
             // Act
-            int result = Calculator.Multiply(a, b);
+            var result = Calculator.Multiply(a, b);
         
             // Assert
             result.Should().Be(40);
@@ -73,7 +73,7 @@ namespace Calculator.Tests
             int b = 5;
         
             // Act
-            int result = Calculator.Divide(a, b);
+            var result = Calculator.Divide(a, b);
         
             // Assert
             result.Should().Be(2);
@@ -117,10 +117,24 @@ namespace Calculator.Tests
             int b = -4;
         
             // Act
-            int result = Calculator.Subtract(a, b);
+            var result = Calculator.Subtract(a, b);
         
             // Assert
             result.Should().Be(14);
+        }
+        
+        [Fact]
+        public void Add_WhenOverflowOccurs_ShouldThrowOverflowException()
+        {
+            // Arrange
+            int a = int.MaxValue;
+            int b = 1;
+        
+            // Act
+             Action result = () => Calculator.Add(a, b);
+        
+            // Assert
+            result.Should().Throw<OverflowException>("Arithmetic operation resulted in an overflow.");
         }
         
     }

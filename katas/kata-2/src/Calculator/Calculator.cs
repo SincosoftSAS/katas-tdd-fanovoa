@@ -21,10 +21,20 @@ namespace Calculator
 
         public static int Subtract(int minuend, int subtrahend)
         {
-            if (TheNumbersAreNegatives(minuend, subtrahend))
-                return Add(minuend, subtrahend);
+            try
+            {
+                checked
+                {
+                    if (TheNumbersAreNegatives(minuend, subtrahend))
+                        return Add(minuend, subtrahend);
 
-            return minuend - subtrahend;
+                    return minuend - subtrahend;
+                }
+            }
+            catch (OverflowException)
+            {
+                throw new OverflowException("Arithmetic operation resulted in an overflow.");
+            }
         }
 
         public static int Multiply(int factor1, int factor2)

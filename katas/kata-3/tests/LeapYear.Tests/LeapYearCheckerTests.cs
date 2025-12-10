@@ -24,5 +24,12 @@ namespace LeapYear.Tests
             
             Assert.False(LeapYearChecker.IsLeapYear(1900));
         }
+        
+        [Fact]
+        public void Year_IsDivisibleBy400_IstLeapYear()
+        {
+            
+            Assert.True(LeapYearChecker.IsLeapYear(400));
+        }
     }
 }

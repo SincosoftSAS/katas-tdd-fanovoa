@@ -4,17 +4,18 @@ namespace LeapYear
     {
         public static bool IsLeapYear(int year)
         {
-            if (IsNotDivisibleByFour(year))
+            if (IsDivisibleByFour(year) && year % 100 != 0)
             {
-                return false;
+                return true;
             }
+            
 
-            return true;
+            return false ;
         }
 
-        private static bool IsNotDivisibleByFour(int year)
+        private static bool IsDivisibleByFour(int year)
         {
-            return year % 4 != 0;
+            return year % 4 == 0;
         }
     }
 }

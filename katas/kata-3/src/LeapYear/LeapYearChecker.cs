@@ -4,26 +4,15 @@ namespace LeapYear
     {
         public static bool IsLeapYear(int year)
         {
-            if ( IsDivisibleByFour(year) && IsNotDivisibleByHundred(year) || IsDivisibleByFourHundred(year) )
-                return true;
-            
-
-            return false ;
+            return IsDivisibleBy(year,400) || IsDivisibleByFourAndNotBy100(year);
         }
 
-        private static bool IsDivisibleByFourHundred(int year)
+        private static bool IsDivisibleByFourAndNotBy100(int year)
         {
-            return year % 400 == 0;
+            return IsDivisibleBy(year,4) && !IsDivisibleBy(year,100);
         }
 
-        private static bool IsNotDivisibleByHundred(int year)
-        {
-            return year % 100 != 0;
-        }
 
-        private static bool IsDivisibleByFour(int year)
-        {
-            return year % 4 == 0;
-        }
+        private static bool IsDivisibleBy(int year, int divisor) => (year % divisor == 0);
     }
 }

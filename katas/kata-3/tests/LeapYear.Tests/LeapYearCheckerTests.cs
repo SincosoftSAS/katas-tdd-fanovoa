@@ -17,5 +17,12 @@ namespace LeapYear.Tests
             // Ejemplo: 2001 no es año bisiesto
             Assert.False(LeapYearChecker.IsLeapYear(2001));
         }
+        
+        [Fact]
+        public void Year_IsDivisibleBy4y100_IsNotLeapYear()
+        {
+            
+            Assert.False(LeapYearChecker.IsLeapYear(1900));
+        }
     }
 }

@@ -1,3 +1,4 @@
+using FluentAssertions;
 using Xunit;
 
 namespace LeapYear.Tests
@@ -31,6 +32,15 @@ namespace LeapYear.Tests
             
             Assert.True(LeapYearChecker.IsLeapYear(400));
         }
+        
+        [Fact]
+        public void Year_Is0_ExecuteException()
+        {
+            var action = () => LeapYearChecker.IsLeapYear(0);
+            action.Should().Throw<ArgumentException>("Year must be greater than 0");
+        }
+        
+        
         
     }
 }

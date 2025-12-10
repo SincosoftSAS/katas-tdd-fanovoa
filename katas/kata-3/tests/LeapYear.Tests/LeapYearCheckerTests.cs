@@ -42,5 +42,14 @@ namespace LeapYear.Tests
         
         
         
+        [Fact]
+        public void Year_IsNegative_ExecuteException()
+        {
+            var action = () => LeapYearChecker.IsLeapYear(-1);
+            action.Should().Throw<ArgumentException>("Year must be greater than 0");
+        }
+
+        
+        
     }
 }

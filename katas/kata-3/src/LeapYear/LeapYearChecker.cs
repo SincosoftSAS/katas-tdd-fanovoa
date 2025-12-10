@@ -5,6 +5,7 @@ namespace LeapYear
         public static bool IsLeapYear(int year)
         {
             if( year ==0) throw new ArgumentException("Year must be greater than 0");
+            if( year <0) throw new ArgumentException("Year must be greater than 0");
             return IsDivisibleBy(year,400) || IsDivisibleByFourAndNotBy100(year);
         }
 

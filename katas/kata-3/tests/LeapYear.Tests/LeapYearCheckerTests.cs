@@ -5,13 +5,7 @@ namespace LeapYear.Tests
 {
     public class LeapYearCheckerTests
     {
-        // [Fact]
-        // public void Year_DivisibleBy4_ButNotBy100_IsLeapYear()
-        // {
-        //     // Ejemplo: 2004 es año bisiesto
-        //     Assert.True(LeapYearChecker.IsLeapYear(2004));
-        // }
-
+     
         [Fact]
         public void Year_NotDivisibleBy4_IsNotLeapYear()
         {
@@ -39,8 +33,6 @@ namespace LeapYear.Tests
             var action = () => LeapYearChecker.IsLeapYear(0);
             action.Should().Throw<ArgumentException>("Year must be greater than 0");
         }
-        
-        
         
         [Fact]
         public void Year_IsNegative_ExecuteException()

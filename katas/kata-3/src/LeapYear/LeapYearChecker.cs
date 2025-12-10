@@ -5,9 +5,10 @@ namespace LeapYear
         public static bool IsLeapYear(int year)
         {
             if (IsDivisibleByFour(year) && year % 100 != 0)
-            {
                 return true;
-            }
+            
+            if(year % 400 == 0)
+                return true;
             
 
             return false ;

@@ -31,5 +31,6 @@ namespace LeapYear.Tests
             
             Assert.True(LeapYearChecker.IsLeapYear(400));
         }
+        
     }
 }

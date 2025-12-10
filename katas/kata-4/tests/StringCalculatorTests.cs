@@ -1,6 +1,6 @@
-using Xunit;
+using src;
 
-namespace StringCalculator.Tests
+namespace tests
 {
     public class CalculatorTests
     {

@@ -1,4 +1,4 @@
-namespace src
+namespace StringCalculator
 {
     public class Calculator
     {
